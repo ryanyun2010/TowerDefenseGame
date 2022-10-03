@@ -1,3 +1,19 @@
+/**
+ * Projectile Class
+ * @type {class}
+ * @param  {number} x the x coordinate of the projectile
+ * @param  {number} y the y coordinate of the projectile
+ * @param  {object} target the target of the projectile expressed as an object with x and y properties
+ * @param  {number} speed the speed of the projectile
+ * @param  {number} damage the damage the projectile deals
+ * @param  {number} lifespan the number of frames before the projectile is removed
+ * @param  {number} theta the direction of the projectile
+ * @property {number} index index of the projectile in the projectiles array
+ * @property {Function} constructor constructor
+ * @property {Function} draw draws the projectile
+ * @property {Function} move moves the projectile based on theta
+ * @property {Function} update calls move and draw
+ */
 class Projectile{
     constructor(x,y,target,speed,damage,lifespan,theta){
         this.x = x;

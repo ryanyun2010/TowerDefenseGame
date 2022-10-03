@@ -1,5 +1,5 @@
 /**
- * Tier 1 Enemy - red 2 speed 1 health and worth 2 coins
+ * Tier 1 Enemy Extends Enemy - red 2 speed 1 health and worth 2 coins
  * @param  {object} path the path the enemy will follow
  */
 class Tier1Enemy extends Enemy{
@@ -8,7 +8,7 @@ class Tier1Enemy extends Enemy{
     }
 }
 /**
- * Tier 2 Tank Enemy - blue 1 speed 3 health and worth 4 coins
+ * Tier 2 Tank Enemy Extends Enemy - blue 1 speed 3 health and worth 4 coins
  * @param  {object} path the path the enemy will follow
  */
 class Tier2TankEnemy extends Enemy{
@@ -17,7 +17,7 @@ class Tier2TankEnemy extends Enemy{
     }
 }
 /**
- * Tier 2 Base Enemy - green 2.5 speed 2 health and worth 3 coins
+ * Tier 2 Base Enemy Extends Enemy - green 2.5 speed 2 health and worth 3 coins
  * @param  {object} path the path the enemy will follow
  */
 class Tier2BaseEnemy extends Enemy{
@@ -26,7 +26,7 @@ class Tier2BaseEnemy extends Enemy{
     }
 }
 /**
- * Tier 2 Speed Enemy - green 3.5 speed 1 health and worth 4 coins
+ * Tier 2 Speed Enemy Extends Enemy - green 3.5 speed 1 health and worth 4 coins
  * @param  {object} path the path the enemy will follow
  */
 class Tier2SpeedEnemy extends Enemy{

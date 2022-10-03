@@ -1,3 +1,18 @@
+/**
+ * Helper class for the Tower Select UI class
+ * @type {class}
+ * @param  {object} ui the ui which the part is attached to
+ * @param  {number} row the row which the part is on
+ * @param  {number} col the column which the part is
+ * @param  {string} color the color of the tower
+ * @param  {string} type the name of the tower
+ * @param  {string} description a description of the tower
+ * @param  {number} cost the cost of the tower
+ * @property {boolean} hovering whether the cursor is hovering over the part
+ * @property {Function} constructor the constructor
+ * @property {Function} draw draws the part on the UI
+ * @property {Function} checkHover checks whether the cursor is hovering over the part
+ */
 class TowerSelectPart {
     constructor(ui, row, col, color, type, description, cost) {
         this.row = row;
@@ -32,6 +47,16 @@ class TowerSelectPart {
         return this.hovering;
     }
 }
+/**
+ * Tower Select UI class
+ * @type {class}
+ * @param  {object} x the x coordinate of the UI
+ * @property {array} towers the towerSelectParts in the UI
+ * @property {object | undefined} currentlySelected the towerSelectPart currently selected
+ * @property {Function} setup sets up the towerSelectParts
+ * @property {Function} draw draws the UI
+ * @property {Function} clicked called when the user clicks anywhere on the screen, either selects a tower or places a tower
+ */
 class TowerSelectUI {
     constructor(x) {
         this.x = x;

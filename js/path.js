@@ -1,3 +1,12 @@
+/**
+ * Path Class
+ * @type {class}
+ * @param  {array} nodes array of the nodes of the path, expressed as an array of objects with x and y properties
+ * @property {object} start the first node of the path
+ * @property {object} end the last node of the path
+ * @property {Function} constructor constructor
+ * @property {Function} draw draws the path
+ */
 class Path{
     constructor(nodes){
         this.nodes = nodes;

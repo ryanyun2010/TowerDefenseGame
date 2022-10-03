@@ -1,3 +1,23 @@
+/**
+ * Enemy Class
+ * @type {class}
+ * @param  {object} path the path object which the enemy will follow
+ * @param  {string} color the color of the enemy
+ * @param  {number} speed the speed at which the enemy will move
+ * @param  {number} health the health of the enemy
+ * @param  {number} value the coins gained from killing the enemy
+ * @property {number} x the x position of the enemy
+ * @property {number} y the y position of the enemy
+ * @property {object} target the target of the enemy expressed as an object with properties x and y
+ * @property {number} targetnum the number of targets already achieved
+ * @property {number} index the index of the enemy in the enemies array
+ * @property {number} id a unique identifier for the enemy
+ * @property {Function} constructor constructor 
+ * @property {Function} draw draws the enemy on the screen
+ * @property {Function} move moves the enemy towards its target
+ * @property {Function} checkHealth checks if the enemy is dead
+ * @property {Function} update runs move and draw
+ */
 class Enemy{
     constructor(path,color,speed,health,value){
         this.path = path;

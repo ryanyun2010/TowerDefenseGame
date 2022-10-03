@@ -1,3 +1,21 @@
+/**
+ * Tower class
+ * @type {class}
+ * @param  {number} x the x coordinate of the tower
+ * @param  {number} y the y coordinate of the tower
+ * @param  {number} damage the damage the projectiles of the tower deal
+ * @param  {number} range the range of the tower
+ * @param  {number} attackdelay the amount of frames between the tower's attacks
+ * @param  {number} projectilespeed the speed of the projectiles of the tower
+ * @param  {number} color the color of the tower
+ * @param  {number} projectilelifespan the amount of frames before the tower's projectiles are removed
+ * @property {number} index the index of the tower in the towers array
+ * @property {boolean} canShoot whether the tower can shoot
+ * @property {number} delayLeft the amount of frames before the tower can shoot
+ * @property {Function} draw draws the tower
+ * @property {Function} attemptToShoot attempts to shoot
+ * @property {Function} update draws the tower and attempts to shoot.
+ */
 class Tower{
     constructor(x,y,damage,range,attackdelay,projectilespeed,color,projectilelifespan){
         this.x = x;

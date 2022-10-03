@@ -1,3 +1,7 @@
+/**
+ * Adds the waves to the waves array
+ * @type {function}
+ */
 function setupWaves(){
   // wave 1 
   // 3 Tier 1s
