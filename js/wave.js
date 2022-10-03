@@ -1,3 +1,13 @@
+/**
+ * Wave Class
+ * @type {class}
+ * @param  {object} data the data of the wave stored as enemies and the number of frames before sending the enemy
+ * @property {number} time the number of frames passed
+ * @property {number} index the index of the wave in the waves array
+ * @property {Function} sendEnemies sends enemies based on time
+ * @property {Function} checkIfWaveOver checks if there are any enemies left to send
+ * @property {Function} update increases the time, sends enemies and checks if the wave is over
+ */
 class Wave{
     constructor(data){
         this.data = data;

@@ -1,5 +1,35 @@
-/**
- * Called when an enemy reaches the end, removes the health of the enemy from the player health and deletes the enemy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: helper.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: helper.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Called when an enemy reaches the end
+ * removed the health of the enemy from the player health
+ * deletes the enemy
  * @type  {function}
  * @param  {object} enemy the enemy that reached the end
  */
@@ -9,17 +39,15 @@ function enemyReachedEnd(enemy){
 }
 /**
  * Sets the indexes of all elements of the array
- * @type  {function}
  * @param  {array} array the array to set the indexes of
  */
 function setIndexes(array){
-    for(var i = 0; i < array.length; i ++){
+    for(var i = 0; i &lt; array.length; i ++){
         array[i].index = i;
     }
 }
 /**
  * Runs update on all elements of the array
- * @type  {function}
  * @param  {array} array the array to update
  */
 function updateAllInArray(array){
@@ -32,7 +60,6 @@ function updateAllInArray(array){
  * Removes the projectile's damage from the enemy's health
  * Removes the projectile
  * Checks if the enemy is dead
- * @type  {function}
  * @param  {object} projectile the projectile which hit the enemy
  * @param  {object} enemy the enemy which the projectile hit
  */
@@ -45,7 +72,6 @@ function hitEnemy(projectile,enemy){
  * Called when an enemy dies
  * Adds the enemy's value to the player's coins
  * Removes the enemy
- * @type  {function}
  * @param  {object} enemy the enemy which died
  */
 function enemyDead(enemy){
@@ -55,7 +81,6 @@ function enemyDead(enemy){
 }
 /**
  * Finds the enemies in range of a tower
- * @type  {function}
  * @param  {object} tower the tower which you want to find enemies in range of
  * @param  {object} range the range of the tower
  * @returns {array} An array of arrays. Each element contains the enemy and the distance from the tower to the enemy
@@ -71,7 +96,6 @@ function enemiesInRange(tower,range){
 }
 /**
  * Finds the closest enemy in range of the tower
- * @type  {function}
  * @param  {object} tower the tower you want to find the closest enemy to
  * @param  {object} range the range of the tower
  * @returns {array} The closest enemy in range of the tower and the distance to the enemy from the tower
@@ -80,7 +104,7 @@ function closestEnemyInRange(tower,range){
     var enemies = enemiesInRange(tower,range);
     var closest = [0,10000000]
     for(var enemy of enemies){
-        if(enemy[1] < closest[1]){
+        if(enemy[1] &lt; closest[1]){
             closest = enemy;
         }
     }
@@ -88,7 +112,6 @@ function closestEnemyInRange(tower,range){
 }
 /**
  * Finds the distance between 2 points
- * @type  {function}
  * @param  {array} point1 x and y of point 1
  * @param  {array} point2 x and y of point 2
  * @returns {number} distance between point 1 and point 2
@@ -98,18 +121,16 @@ function distance(point1,point2){
 }
 /**
  * Checks if an enemy is in range of a tower
- * @type  {function}
  * @param  {object} tower the tower which the enemy needs to be in range of
  * @param  {number} range the range of the tower
  * @param  {object} enemy the enemy to check if in range of the tower
  * @returns {boolean} true if the enemy is in range of the tower
  */
 function enemyInRange(tower,range,enemy){
-    return (distance(tower,enemy) <= range) ? true : false;
+    return (distance(tower,enemy) &lt;= range) ? true : false;
 }
 /**
  * Runs both updateAllInArray and setIndexes on an array
- * @type  {function}
  * @param  {array} array array to run updateAllInArray and setIndexes on
  */
 function updateAndIndexArray(array){
@@ -119,7 +140,6 @@ function updateAndIndexArray(array){
 /**
  * Called when a wave has finished
  * Starts the next wave
- * @type  {function}
  * @param  {object} wavedone the wave which has been finished
  */
 function waveOver(wavedone){
@@ -129,7 +149,6 @@ function waveOver(wavedone){
 }
 /**
  * Creates a tower at a x and y position
- * @type  {function}
  * @param  {number} x the x to create the tower at
  * @param  {number} y the y to create the tower at
  * @param  {string} type the type of tower to create
@@ -152,7 +171,6 @@ function createTower(x,y,type){
 }
 /**
  * Finds the range of a tower type
- * @type  {function}
  * @param  {string} type name of the tower type
  * @returns {number} range of the tower
  */
@@ -174,11 +192,10 @@ function findRange(type){
 }
 /**
  * Removes the enemy with a certain ID
- * @type  {function}
  * @param  {number} id ID of the enemy to remove
  */
 function removeEnemyWithId(id){
-    for(var i = 0; i < enemies.length; i ++){
+    for(var i = 0; i &lt; enemies.length; i ++){
         if(enemies[i].id == id){
             enemies.splice(i,1);
         }
@@ -186,13 +203,12 @@ function removeEnemyWithId(id){
 }
 /**
  * Checks if a projectile has hit any enemies
- * @type  {function}
  * @param  {object} projectile projectile to check hits
  * @returns {object} with a hit property noting if the projectile has hit anything and an enemy projectile with the enemy hit when applicable
  */
 function checkEnemyHit(projectile){
     for(var enemy of enemies){
-        if(Math.abs(projectile.x - enemy.x) < (((projectile.speed * 2) > 19) ? projectile.speed * 2 : 20)  && Math.abs(projectile.y - enemy.y) < (((projectile.speed * 2) > 19) ? projectile.speed * 2 : 20)){
+        if(Math.abs(projectile.x - enemy.x) &lt; (((projectile.speed * 2) > 19) ? projectile.speed * 2 : 20)  &amp;&amp; Math.abs(projectile.y - enemy.y) &lt; (((projectile.speed * 2) > 19) ? projectile.speed * 2 : 20)){
             return {"hit":true,"enemy":enemy};
         }
     }
@@ -200,9 +216,30 @@ function checkEnemyHit(projectile){
 }
 /**
  * Removes a projectile
- * @type  {function}
  * @param  {} projectile the projectile to remove
  */
 function removeProjectile(projectile){
     projectiles.splice(projectile.index,1);
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="DartShooter.html">DartShooter</a></li><li><a href="Enemy.html">Enemy</a></li><li><a href="MachineGunner.html">MachineGunner</a></li><li><a href="Path.html">Path</a></li><li><a href="Projectile.html">Projectile</a></li><li><a href="Sniper.html">Sniper</a></li><li><a href="Sprayer.html">Sprayer</a></li><li><a href="Tier1Enemy.html">Tier1Enemy</a></li><li><a href="Tier2BaseEnemy.html">Tier2BaseEnemy</a></li><li><a href="Tier2SpeedEnemy.html">Tier2SpeedEnemy</a></li><li><a href="Tier2TankEnemy.html">Tier2TankEnemy</a></li><li><a href="Tower.html">Tower</a></li><li><a href="TowerSelectPart.html">TowerSelectPart</a></li><li><a href="TowerSelectUI.html">TowerSelectUI</a></li></ul><h3>Global</h3><ul><li><a href="global.html#checkEnemyHit">checkEnemyHit</a></li><li><a href="global.html#closestEnemyInRange">closestEnemyInRange</a></li><li><a href="global.html#createTower">createTower</a></li><li><a href="global.html#distance">distance</a></li><li><a href="global.html#enemiesInRange">enemiesInRange</a></li><li><a href="global.html#enemyDead">enemyDead</a></li><li><a href="global.html#enemyInRange">enemyInRange</a></li><li><a href="global.html#enemyReachedEnd">enemyReachedEnd</a></li><li><a href="global.html#findRange">findRange</a></li><li><a href="global.html#hitEnemy">hitEnemy</a></li><li><a href="global.html#removeEnemyWithId">removeEnemyWithId</a></li><li><a href="global.html#removeProjectile">removeProjectile</a></li><li><a href="global.html#setIndexes">setIndexes</a></li><li><a href="global.html#setupWaves">setupWaves</a></li><li><a href="global.html#updateAllInArray">updateAllInArray</a></li><li><a href="global.html#updateAndIndexArray">updateAndIndexArray</a></li><li><a href="global.html#waveOver">waveOver</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Sun Oct 02 2022 17:58:07 GMT-0700 (Pacific Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

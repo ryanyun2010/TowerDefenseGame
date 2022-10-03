@@ -12,9 +12,10 @@
  * @property {number} index the index of the tower in the towers array
  * @property {boolean} canShoot whether the tower can shoot
  * @property {number} delayLeft the amount of frames before the tower can shoot
+ * @property {Function} constructor constructor
  * @property {Function} draw draws the tower
  * @property {Function} attemptToShoot attempts to shoot
- * @property {Function} update draws the tower and attempts to shoot.
+ * @property {Function} update draws the tower, attempts to shoot, and decreases the delayLeft
  */
 class Tower{
     constructor(x,y,damage,range,attackdelay,projectilespeed,color,projectilelifespan){

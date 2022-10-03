@@ -1,5 +1,8 @@
+/**
+ * Register which stores the keys currently down.
+ * @type {object}
+ */
 var register = {};
-
 function keyPressed() {
     register[keyCode] = true;
 }
